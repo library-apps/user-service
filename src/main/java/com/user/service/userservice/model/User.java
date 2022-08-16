@@ -1,0 +1,53 @@
+package com.user.service.userservice.model;
+
+import lombok.*;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+
+@Entity(name = "User")
+@Table(name = "users")
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, insertable = false, unique = true)
+    private Long id;
+
+    @Column(name = "username", nullable = false, length = 255)
+    private String username;
+
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
+
+    @Column(name = "password", nullable = false)
+    private String password;
+
+    @Column(name = "phone", nullable = true)
+    private String phone;
+
+    @Column(name = "createdAt", nullable = true)
+    private Date createdAt;
+
+    @Column(name = "updatedAt", nullable = true)
+    private Date updatedAt;
+
+    @Column(name = "isDeleted", nullable = true, columnDefinition = "integer default 1")
+    private Integer isDeleted;
+
+    @Column(name = "deletedAt", nullable = true)
+    private Date deletedAt;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Collection<Role> roles = new ArrayList<Role>();
+}
