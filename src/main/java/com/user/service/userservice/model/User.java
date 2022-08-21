@@ -1,5 +1,6 @@
 package com.user.service.userservice.model;
 
+import com.user.service.userservice.model.audit.AuditModel;
 import lombok.*;
 
 import javax.persistence.*;
@@ -15,7 +16,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class User implements Serializable {
+public class User extends AuditModel<String> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -36,13 +37,7 @@ public class User implements Serializable {
     @Column(name = "phone", nullable = true)
     private String phone;
 
-    @Column(name = "createdAt", nullable = true)
-    private Date createdAt;
-
-    @Column(name = "updatedAt", nullable = true)
-    private Date updatedAt;
-
-    @Column(name = "isDeleted", nullable = true, columnDefinition = "integer default 1")
+    @Column(name = "isDeleted", nullable = false, columnDefinition = "integer default 0")
     private Integer isDeleted;
 
     @Column(name = "deletedAt", nullable = true)
