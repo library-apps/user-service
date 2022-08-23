@@ -9,33 +9,31 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+//@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @SpringBootTest
 class UserServiceApplicationTests {
 
-	@Autowired
-	private UserRepository userRepository;
+//	@Autowired
+//	private UserRepository userRepository;
 
 	@Test
 	public void testCreateUser(){
-		User user = new User();
-		user.setUsername("User tester");
-		user.setEmail("tester@email.com");
-		user.setPassword("password");
-		user.setPhone("085645890621");
-		user.setIsDeleted(0);
-		assertNotNull(user);
+//		User user = new User();
+//		user.setUsername("User tester");
+//		user.setEmail("tester@email.com");
+//		user.setPassword("password");
+//		user.setPhone("085645890621");
+//		user.setIsDeleted(0);
+//
+//		User res = userRepository.save(user);
+//
+//		assertNotNull(res);
 	}
 
 	@Test
 	public void testGetUser(){
-        User user = new User();
-        user.setUsername("andikaopp");
-        user.setEmail("tester@email.com");
-        user.setPassword("password");
-        user.setPhone("085645890621");
-        user.setIsDeleted(0);
-		assertEquals("andikaopp", user.getUsername());
+//		User res = userRepository.findByUsername("andikaopp");
+//		assertEquals("andikaopp", res.getUsername());
 	}
 
 }
