@@ -18,7 +18,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
 		<spring-cloud.version>2020.0.5</spring-cloud.version>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
