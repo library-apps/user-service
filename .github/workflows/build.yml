@@ -1,5 +1,4 @@
-#Workflow name
-name: CI/CD Pipeline
+name: CI/CD Pipeline Build
 on:
   #Manually trigger workflow runs
   workflow_dispatch:
