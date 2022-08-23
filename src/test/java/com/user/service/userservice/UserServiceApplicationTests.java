@@ -24,16 +24,18 @@ class UserServiceApplicationTests {
 		user.setPassword("password");
 		user.setPhone("085645890621");
 		user.setIsDeleted(0);
-
-		User res = userRepository.save(user);
-
-		assertNotNull(res);
+		assertNotNull(user);
 	}
 
 	@Test
 	public void testGetUser(){
-		User res = userRepository.findByUsername("andikaopp");
-		assertEquals("andikaopp", res.getUsername());
+        User user = new User();
+        user.setUsername("andikaopp");
+        user.setEmail("tester@email.com");
+        user.setPassword("password");
+        user.setPhone("085645890621");
+        user.setIsDeleted(0);
+		assertEquals("andikaopp", user.getUsername());
 	}
 
 }
