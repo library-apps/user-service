@@ -16,8 +16,8 @@ class UserServiceApplicationTests {
 //	@Autowired
 //	private UserRepository userRepository;
 
-	@Test
-	public void testCreateUser(){
+//	@Test
+//	public void testCreateUser(){
 //		User user = new User();
 //		user.setUsername("User tester");
 //		user.setEmail("tester@email.com");
@@ -28,12 +28,12 @@ class UserServiceApplicationTests {
 //		User res = userRepository.save(user);
 //
 //		assertNotNull(res);
-	}
+//	}
 
-	@Test
-	public void testGetUser(){
+//	@Test
+//	public void testGetUser(){
 //		User res = userRepository.findByUsername("andikaopp");
 //		assertEquals("andikaopp", res.getUsername());
-	}
+//	}
 
 }
