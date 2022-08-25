@@ -1,12 +1,6 @@
 # Library Apps
 Final project upskilled academy
 
-# ERD
-![alt text](https://github.com/andikaopp/library-apps/blob/main/ERD.png?raw=true)
-
-# Design Microservices
-![alt text](https://github.com/andikaopp/library-apps/blob/main/diagram.png?raw=true)
-
 # Environment
 - Cloud : AWS EC2
 - Database : RDS
@@ -98,8 +92,8 @@ Request :
 }
 ```
 
-## Borrower
-### Create borrower
+## Reader
+### Create reader
 Request :
 - Method : POST
 - Endpoint : `/api/borrowers`
@@ -112,10 +106,12 @@ Request :
 ```json
 {
     "id" : "string, unique",
-    "name" : "string",
+    "reader_name" : "string",
+    "address" : "string",
+    "phone" : "integer",
     "email" : "string",
-    "phone" : "string",
-    "address" : "string"
+    "gender" : "string",
+    "is_borrower" : "integer"
 }
 ```
 
@@ -126,16 +122,18 @@ Request :
     "message" : "string",
     "data" : {
         "id" : "string, unique",
-        "name" : "string",
-        "email" : "string",
-        "phone" : "string",
+        "reader_name" : "string",
         "address" : "string",
+        "phone" : "integer",
+        "email" : "string",
+        "gender" : "string",
+        "is_borrower" : "integer",
         "createdAt" : "date"
     }
 }
 ```
 
-### Get Borrower
+### Get Reader
 Request :
 - Method : GET
 - Endpoint : `/api/borrowers/{id_borrower}`
@@ -149,10 +147,13 @@ Request :
     "message" : "string",
     "data" : {
         "id" : "string, unique",
-        "name" : "string",
-        "email" : "string",
-        "phone" : "string",
+        "id" : "string, unique",
+        "reader_name" : "string",
         "address" : "string",
+        "phone" : "integer",
+        "email" : "string",
+        "gender" : "string",
+        "is_borrower" : "integer",
         "createdAt" : "date"
     }
 }
@@ -162,7 +163,7 @@ Request :
 ### Create Book Vendor
 Request :
 - Method : POST
-- Endpoint : `/api/vendors`
+- Endpoint : `/api/vendor`
 - Header :
     - Content-Type : application/json
     - Accept : application-json
@@ -177,7 +178,6 @@ Request :
     "email" : "string",
     "phone" : "string",
     "address" : "string",
-    "join_date" : "date",
     "status" : "char"
 }
 ```
@@ -194,7 +194,6 @@ Request :
         "email" : "string",
         "phone" : "string",
         "address" : "string",
-        "join_date" : "date",
         "status" : "char"
     }
 }
@@ -203,7 +202,7 @@ Request :
 ### Get Book Vendor
 Request :
 - Method : GET
-- Endpoint : `/api/vendors/{id_vendor}`
+- Endpoint : `/api/vendor/{id_vendor}`
 - Header :
     - Accept : application-json
     - Authorization : Bearer {token}
@@ -219,9 +218,7 @@ Request :
         "email" : "string",
         "phone" : "string",
         "address" : "string",
-        "join_date" : "date",
-        "status" : "char",
-        "createdAt" : "date"
+        "status" : "char"
     }
 }
 ```
@@ -230,7 +227,7 @@ Request :
 ### Create Book
 Request :
 - Method : POST
-- Endpoint : `/api/books`
+- Endpoint : `/api/book`
 - Header :
     - Content-Type : application/json
     - Accept : application-json
@@ -241,10 +238,11 @@ Request :
 {
     "id" : "string, unique",
     "title" : "string",
-    "summary" : "string",
-    "page" : "integer",
     "author" : "string",
-    "year" : "string",
+    "summary" : "string",
+    "pages" : "integer",
+    "author" : "string",
+    "year" : "integer",
     "vendor_id" : "string"
 }
 ```
@@ -257,10 +255,11 @@ Request :
     "data" : {
         "id" : "string, unique",
         "title" : "string",
-        "summary" : "string",
-        "page" : "integer",
         "author" : "string",
-        "year" : "string",
+        "summary" : "string",
+        "pages" : "integer",
+        "author" : "string",
+        "year" : "integer",
         "vendor_id" : "string"
     }
 }
@@ -281,12 +280,12 @@ Request :
     "data" : {
         "id" : "string, unique",
         "title" : "string",
-        "summary" : "string",
-        "page" : "integer",
         "author" : "string",
-        "year" : "string",
-        "vendor_id" : "string",
-        "createdAt" : "date"
+        "summary" : "string",
+        "pages" : "integer",
+        "author" : "string",
+        "year" : "integer",
+        "vendor_id" : "string"
     }
 }
 ```
@@ -304,10 +303,11 @@ Request :
 ```json
 {
     "title" : "string",
-    "summary" : "string",
-    "page" : "integer",
     "author" : "string",
-    "year" : "string",
+    "summary" : "string",
+    "pages" : "integer",
+    "author" : "string",
+    "year" : "integer",
     "vendor_id" : "string"
 }
 ```
@@ -320,10 +320,11 @@ Request :
     "data" : {
         "id" : "string, unique",
         "title" : "string",
-        "summary" : "string",
-        "page" : "integer",
         "author" : "string",
-        "year" : "string",
+        "summary" : "string",
+        "pages" : "integer",
+        "author" : "string",
+        "year" : "integer",
         "vendor_id" : "string"
     }
 }
